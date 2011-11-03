@@ -3,19 +3,34 @@
 # Date: 11/1/11
 # Purpose: code to parse msdhcp dump text from dhcp server
 # This will get all the dhcp scope information available via the dump file.
+# This file is a sample program that uses the msdhcpdump gem to parse a dump file into objects
+
 require 'rubygems'
 require 'msdhcpdump'
 
 
 dumpfile = File.open('sampledump.txt', 'r')
 @dhcpdump = Msdhcpdump.new(dumpfile)
-puts @dhcpdump.list
-@dhcpdump.each_value do |s|
-        puts s.getleases
-        puts "\n"
-        puts s.exclusions
-#        puts s.to_s
 
+# List the all the dhcp scopes found in the dump
+puts "\nAll scopes in dump file"
+puts @dhcpdump.list
+
+# Show the properties of a specific scope
+puts "\nShow the properties of scope"
+puts @dhcpdump["192.168.19.0"].to_s
+puts "\n"
+# Show the exclusions
+puts "\nShow the Exclusions \n"
+puts @dhcpdump["192.168.19.0"].exclusions
+
+# Show the reservations of the scope
+puts "\nScope Reservations\n"
+puts @dhcpdump["192.168.19.0"].reservations
+
+# Show Active Scopes
+@dhcpdump.each_value do |sc|
+   puts "#{sc.net} #{sc.active?} #{sc.state}"
 end
 
 dumpfile.close

@@ -1,5 +1,5 @@
 class Scope
-  attr_accessor :name, :net, :mask, :state, :desc, :option, :exclusions, :reserved, :leases, :startrange, :endrange
+  attr_accessor :name, :net, :mask, :state, :desc, :option, :exclusions, :reserved, :reservations, :startrange, :endrange
 
   def initialize(matchobj)
     scopearray = matchobj.split(' ',3).to_a
@@ -12,7 +12,7 @@ class Scope
     @option = nil
     @exclusions = Array.new
     @reserved = Array.new
-    @leases = Hash.new
+    @reservations = Hash.new
   end
   def setstate value
     @state = value
@@ -21,13 +21,13 @@ class Scope
     @exclusions << Exclusion.new(range)
   end
   def active?
-    return @state == 1
+    return @state.to_i == 1
   end
-  def listleases
-    @leases.keys
+  def listreservations
+    @reservations.keys
   end
-  def getleases
-    @leases.values
+  def getreservations
+    @reservations.values
   end
   def to_s
      p= Array.new
@@ -38,15 +38,15 @@ class Scope
      p[4] = "Scope option:  #{@option}" 
      p[5] = "Scope desc: #{@desc}"
      p[6] = "Scope active status: #{state}"
-     p[7] = "Scope IP exclusions: \n#{@exlusions.to_s}"
-     p[8] = "Scope current reservations: \n#{getleases.to_s}"
+     p[7] = "Scope IP exclusions: \n#{@exclusions}"
+     p[8] = "Scope current reservations: \n#{getreservations.to_s}"
      p[9] = "\n"
      return p
      
   end
-  def addlease(lease=[])
-    newlease = Lease.new(lease)
-    @leases[newlease.mac] = newlease
+  def addreservation(reservation=[])
+    newreservation = Reservation.new(reservation)
+    @reservations[newreservation.mac] = newreservation
 
   end
 end

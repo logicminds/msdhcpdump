@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.description = "Easy way to parse a Microsoft DHCP dump of scopes"
   s.files = [
     "lib/msdhcpdump/exclusion.rb",
-    "lib/msdhcpdump/lease.rb",
+    "lib/msdhcpdump/reservation.rb",
     "lib/msdhcpdump/scope.rb",
-    "lib/msdhcpdump/msdhcpdump.rb",
+    "lib/msdhcpdump.rb",
     "test.rb",
     "sampledump.txt",
     "msdhcpdump.gemspec",

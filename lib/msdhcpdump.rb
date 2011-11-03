@@ -1,9 +1,10 @@
-require 'msdhcpdump/lease'
+require 'msdhcpdump/reservation'
 require 'msdhcpdump/scope'
 require 'msdhcpdump/exclusion'
 
 
 class Msdhcpdump < Hash
+
   def initialize(dhcpdump)
     super()
     @debug=false
@@ -21,16 +22,15 @@ class Msdhcpdump < Hash
   def getscopes
      self.values
   end
- # def active
- #   activelist = Array.new
- #   self.each_value do
- #     puts sc.name
- #     if sc.active?
- #        activelist << sc 
- #     end
- #   end
- #   return activelist
- # end
+  def getactive
+    activelist = []
+    self.each_value do
+      if sc.active?
+         activelist << sc 
+      end
+    end
+    return activelist
+  end
   private 
   def processdump(dhcpdump)
      linenumber=0
@@ -79,7 +79,7 @@ class Msdhcpdump < Hash
       if matchobj
           puts "line: #{linenumber} adding #{matchobj[1].to_s} reservedip=#{matchobj[2].to_s}" if @debug
           scopeip = matchobj[1]
-          self[scopeip].addlease(matchobj[2].split(' '))
+          self[scopeip].addreservation(matchobj[2].split(' '))
           next
       end
     }
