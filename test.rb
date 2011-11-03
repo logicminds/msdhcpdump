@@ -3,15 +3,18 @@
 # Date: 11/1/11
 # Purpose: code to parse msdhcp dump text from dhcp server
 # This will get all the dhcp scope information available via the dump file.
+require 'rubygems'
+require 'msdhcpdump'
 
-require 'lib/scopes'
 
-
-dumpfile = File.open('dump2.txt', 'r')
+dumpfile = File.open('sampledump.txt', 'r')
 @scopes = Scopes.new(dumpfile)
 puts @scopes.list
 @scopes.each_value do |s|
-        puts s.to_s
+        puts s.getleases
+        puts "\n"
+        puts s.exclusions
+#        puts s.to_s
 
 end
 

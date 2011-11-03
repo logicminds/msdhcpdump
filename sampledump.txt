@@ -1,0 +1,917 @@
+
+
+# ==============================================================
+#  Configuration Information for Server 192.168.20.54                   
+# ==============================================================
+
+
+
+# =====================================
+#     Add Classes                      
+# =====================================
+
+Dhcp Server 192.168.20.54 Add Class "Default Routing and Remote Access Class" "User class for remote access clients" 525241532e4d6963726f736f6674 0 b
+Dhcp Server 192.168.20.54 Add Class "Default Network Access Protection Class" "Default special user class for Restricted Access clients" 4d534654205175610616e74696e65 0 b
+Dhcp Server 192.168.20.54 Add Class "Default BOOTP Class" "User class for BOOTP Clients" 424f4f54502e4d6963726f736f6674 0 b
+Dhcp Server 192.168.20.54 Add Class "Microsoft Windows 2000 Options" "Microsoft vendor-specific options for Windows 2000 and above Clients" 4d53465420352e30 1 b
+Dhcp Server 192.168.20.54 Add Class "Microsoft Windows 98 Options" "Microsoft vendor-specific options for Windows 98 Clients" 4d534654203938 1 b
+Dhcp Server 192.168.20.54 Add Class "Microsoft Options" "Microsoft vendor-specific options applicable to all Windows Clients" 4d534654 1 b
+Dhcp Server 192.168.20.54 Add Class "Airespace" "Airespace Discovery Support" 4169726573706163652e415031323030 1 b
+Dhcp Server 192.168.20.54 Add Class "Cisco Aironet 1251" "Vendor Class Identifier for Cisco Aironet 1251 AP" 436973636f204150206331323430 1 b
+
+# =====================================
+#     Add Classes  End                 
+# =====================================
+
+
+# =====================================
+#     Add Optiondef                    
+# =====================================
+
+
+Dhcp Server 192.168.20.54 Add Optiondef 121 "Classless Static Routes" BINARY 0 comment="Destination, mask and router IP addresses in priority order" 
+Dhcp Server 192.168.20.54 Add Optiondef 1 "Subnet Mask" IPADDRESS 0 comment="Subnet mask in network byte order" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 2 "Time Offset" DWORD 0 comment="UCT offset in seconds" 0
+Dhcp Server 192.168.20.54 Add Optiondef 3 "Router" IPADDRESS 1 comment="Array of router addresses ordered by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 4 "Time Server" IPADDRESS 1 comment="Array of time server addresses, by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 5 "Name Servers" IPADDRESS 1 comment="Array of name servers [IEN 116], by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 6 "DNS Servers" IPADDRESS 1 comment="Array of DNS servers, by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 7 "Log Servers" IPADDRESS 1 comment="Array of MIT_LCS UDP log servers on subnet" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 8 "Cookie Servers" IPADDRESS 1 comment="Array of cookie servers, RFC 865" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 9 "LPR Servers" IPADDRESS 1 comment="Array of RFC 1179 servers, by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 10 "Impress Servers" IPADDRESS 1 comment="Array of Imagen Impress Servers" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 11 "Resource Location Servers" IPADDRESS 1 comment="Array of RFC 887 ResLoc Servers on subnet, by preference" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 12 "Host Name" STRING 0 comment="Host name for client, RFC 1035 character set" ""
+Dhcp Server 192.168.20.54 Add Optiondef 13 "Boot File Size" WORD 0 comment="Size of boot image file in 512-octet blocks" 0
+Dhcp Server 192.168.20.54 Add Optiondef 14 "Merit Dump File" STRING 0 comment="Path name for crash dump file" ""
+Dhcp Server 192.168.20.54 Add Optiondef 15 "DNS Domain Name" STRING 0 comment="DNS Domain name for client resolutions" ""
+Dhcp Server 192.168.20.54 Add Optiondef 16 "Swap Server" IPADDRESS 0 comment="Address of client's swap server" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 17 "Root Path" STRING 0 comment="Path name for client's root disk, char set NVT ASCII" ""
+Dhcp Server 192.168.20.54 Add Optiondef 18 "Extensions Path" STRING 0 comment="tftp file for option extensions" ""
+Dhcp Server 192.168.20.54 Add Optiondef 19 "IP Layer Forwarding" BYTE 0 comment="Disable/enable IP packet forwarding on this client" 0
+Dhcp Server 192.168.20.54 Add Optiondef 20 "Nonlocal Source Routing" BYTE 0 comment="Disable/enable nonlocal datagrams" 0
+Dhcp Server 192.168.20.54 Add Optiondef 21 "Policy Filter Masks" IPADDRESS 1 comment="Destination/mask IP address pairs to filter source routes" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 22 "Max DG Reassembly Size" WORD 0 comment="Maximum size datagram for reassembly by client; max 576" 0
+Dhcp Server 192.168.20.54 Add Optiondef 23 "Default IP Time-to-live" BYTE 0 comment="Default TTL for client's use on outgoing DGs" 0
+Dhcp Server 192.168.20.54 Add Optiondef 24 "Path MTU Aging Timeout" DWORD 0 comment="Timeout in seconds for aging Path MTU values; RFC 1191" 0
+Dhcp Server 192.168.20.54 Add Optiondef 25 "Path MTU Plateau Table" WORD 1 comment="MTU discovery sizes, sorted by size, all >= 68" 0
+Dhcp Server 192.168.20.54 Add Optiondef 26 "MTU Option" WORD 0 comment="MTU discovery size, >= 68" 0
+Dhcp Server 192.168.20.54 Add Optiondef 27 "All subnets are local" BYTE 0 comment="The client assumes that all subnets are local" 0
+Dhcp Server 192.168.20.54 Add Optiondef 28 "Broadcast Address" IPADDRESS 0 comment="Broadcast address" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 29 "Perform Mask Discovery" BYTE 0 comment="The client should use ICMP for subnet mask discovery." 0
+Dhcp Server 192.168.20.54 Add Optiondef 30 "Mask Supplier Option" BYTE 0 comment="The client should respond to subnet mask requests via ICMP." 0
+Dhcp Server 192.168.20.54 Add Optiondef 31 "Perform Router Discovery" BYTE 0 comment="The client should solicit routers using RFC 1256." 0
+Dhcp Server 192.168.20.54 Add Optiondef 32 "Router Solicitation Address" IPADDRESS 0 comment="Address to use for router solicitation" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 33 "Static Route Option" IPADDRESS 1 comment="Destination/router address pairs, in priority order" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 34 "Trailer Encapsulation" BYTE 0 comment="The client should negotiate use of trailers (RFC 983)." 0
+Dhcp Server 192.168.20.54 Add Optiondef 35 "ARP Cache Timeout" DWORD 0 comment="Timeout in seconds for ARP cache entries" 0
+Dhcp Server 192.168.20.54 Add Optiondef 36 "Ethernet Encapsulation" BYTE 0 comment="0=>client should use ENet V2; 1=> IEEE 802.3" 0
+Dhcp Server 192.168.20.54 Add Optiondef 37 "TCP Default Time-to-live" BYTE 0 comment="TTL that client uses when sending TCP segments" 0
+Dhcp Server 192.168.20.54 Add Optiondef 38 "Keepalive Interval" DWORD 0 comment="Keepalive timeout in seconds" 0
+Dhcp Server 192.168.20.54 Add Optiondef 39 "Keepalive Garbage" BYTE 0 comment="Send garbage octet" 0
+Dhcp Server 192.168.20.54 Add Optiondef 40 "NIS Domain Name" STRING 0 comment="Name of Network Information Service domain" ""
+Dhcp Server 192.168.20.54 Add Optiondef 41 "NIS Servers" IPADDRESS 1 comment="Addresses of NIS servers on client's subnet" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 42 "NTP Servers" IPADDRESS 1 comment="Addresses of Network Time Protocol servers" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 43 "Vendor Specific Info" BINARY 0 comment="Embedded vendor-specific options" 
+Dhcp Server 192.168.20.54 Add Optiondef 44 "WINS/NBNS Servers" IPADDRESS 1 comment="NBNS Address(es) in priority order" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 45 "NetBIOS over TCP/IP NBDD" IPADDRESS 1 comment="NetBIOS over TCP/IP NBDD address(es) in priority order" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 46 "WINS/NBT Node Type" BYTE 0 comment="0x1 = B-node, 0x2 = P-node, 0x4 = M-node, 0x8 = H-node" 0
+Dhcp Server 192.168.20.54 Add Optiondef 47 "NetBIOS Scope ID" STRING 0 comment="NetBIOS over TCP/IP Scope ID" ""
+Dhcp Server 192.168.20.54 Add Optiondef 48 "X Window System Font" IPADDRESS 1 comment="Array of X Windows font servers" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 49 "X Window System Display" IPADDRESS 1 comment="Array of X Windows Display Mgr servers" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 51 "Lease" DWORD 0 comment="Client IP address lease time in seconds" 0
+Dhcp Server 192.168.20.54 Add Optiondef 58 "Renewal (T1) Time Value" DWORD 0 comment="Time between addr assignment to RENEWING state" 0
+Dhcp Server 192.168.20.54 Add Optiondef 59 "Rebinding (T2) Time Value" DWORD 0 comment="Time from addr assignment to REBINDING state" 0
+Dhcp Server 192.168.20.54 Add Optiondef 64 "NIS+ Domain Name" STRING 0 comment="The name of the client's NIS+ domain." ""
+Dhcp Server 192.168.20.54 Add Optiondef 65 "NIS+ Servers" IPADDRESS 1 comment="A list of IP addresses indicating NIS+ servers" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 66 "Boot Server Host Name" STRING 0 comment="TFTP boot server host name" ""
+Dhcp Server 192.168.20.54 Add Optiondef 67 "Bootfile Name" STRING 0 comment="Bootfile Name" ""
+Dhcp Server 192.168.20.54 Add Optiondef 68 "Mobile IP Home Agents" IPADDRESS 1 comment="Mobile IP home agents in priority order" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 69 "Simple Mail Transport Protocol (SMTP) Servers" IPADDRESS 1 comment="List of SMTP servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 70 "Post Office Protocol (POP3) Servers" IPADDRESS 1 comment="List of POP3 servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 71 "Network News Transport Protocol (NNTP) Servers" IPADDRESS 1 comment="List of NNTP servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 72 "World Wide Web (WWW) Servers" IPADDRESS 1 comment="List of WWW servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 73 "Finger Servers" IPADDRESS 1 comment="List of Finger servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 74 "Internet Relay Chat (IRC) Servers" IPADDRESS 1 comment="List of IRC servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 75 "StreetTalk Servers" IPADDRESS 1 comment="List of StreetTalk servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 76 "StreetTalk Directory Assistance (STDA) Servers" IPADDRESS 1 comment="List of STDA servers available to the client" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 150 "TFTP Server IP Address" IPADDRESS 0 comment="" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 1 "Microsoft Disable Netbios Option " DWORD 0 vendor="Microsoft Options" comment="Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients" 1
+Dhcp Server 192.168.20.54 Add Optiondef 2 "Microsoft Release DHCP Lease On Shutdown Option" DWORD 0 vendor="Microsoft Options" comment="Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown" 1
+Dhcp Server 192.168.20.54 Add Optiondef 3 "Microsoft Default Router Metric Base" DWORD 0 vendor="Microsoft Options" comment="Default Router Base Metrics for Microsoft Windows 2000 Clients" 1
+Dhcp Server 192.168.20.54 Add Optiondef 1 "Microsoft Disable Netbios Option " DWORD 0 vendor="Microsoft Windows 2000 Options" comment="Option for enabling or disabling Netbios for Microsoft Windows 2000 Clients" 1
+Dhcp Server 192.168.20.54 Add Optiondef 2 "Microsoft Release DHCP Lease On Shutdown Option" DWORD 0 vendor="Microsoft Windows 2000 Options" comment="Option for enabling or disabling Windows 2000 Clients to release DHCP lease on shutdown" 1
+Dhcp Server 192.168.20.54 Add Optiondef 3 "Microsoft Default Router Metric Base" DWORD 0 vendor="Microsoft Windows 2000 Options" comment="Default Router Base Metrics for Microsoft Windows 2000 Clients" 0
+Dhcp Server 192.168.20.54 Add Optiondef 101 "Airespace IP Delivery" IPADDRESS 0 vendor="Airespace" comment="Deliver Appliance IP Address to AP" 0.0.0.0
+Dhcp Server 192.168.20.54 Add Optiondef 241 "Option 43" IPADDRESS 1 vendor="Cisco Aironet 1251" comment="WLAN Controller IP Address" 0.0.0.0
+
+# =====================================
+#     Add Optiondef End                
+# ====================================
+
+
+# =====================================
+#     Set Optionvalue                  
+# =====================================
+
+
+# =====================================
+#     Set Optionvalue End              
+# =====================================
+
+
+Dhcp Server 192.168.20.54 Set AuditLog "C:\Windows\system32\dhcp"
+Dhcp Server 192.168.20.54 Set DatabaseBackupInterval 60
+Dhcp Server 192.168.20.54 Set DatabaseBackupPath "C:\Windows\system32\dhcp\backup"
+Dhcp Server 192.168.20.54 Set DatabaseCleanupInterval 60
+Dhcp Server 192.168.20.54 Set DatabaseLoggingFlag 1
+Dhcp Server 192.168.20.54 Set DatabaseName "dhcp.mdb"
+Dhcp Server 192.168.20.54 Set DatabasePath "C:\Windows\system32\dhcp"
+Dhcp Server 192.168.20.54 Set DatabaseRestoreFlag 0
+Dhcp Server 192.168.20.54 Set DetectConflictRetry 2
+
+# =====================================
+#     Add Scope                        
+# =====================================
+
+Dhcp Server 192.168.20.54 add scope 192.168.18.0 255.255.255.0 "Desktops" ""
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.18.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 Add iprange 192.168.18.1 192.168.18.254 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.18.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.18.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 add excluderange 192.168.18.220 192.168.18.254
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 add excluderange 192.168.18.1 192.168.18.39
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.18.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.18.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 3 IPADDRESS "192.168.18.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 15 STRING "sample.corp" 
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.18.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.18.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.18.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.19.0 255.255.255.0 "ATL IT" ""
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.19.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add iprange 192.168.19.1 192.168.19.254 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.19.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.19.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 add excluderange 192.168.19.1 192.168.19.39
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 add excluderange 192.168.19.220 192.168.19.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.19.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.19.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 3 IPADDRESS "192.168.19.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 66 STRING "192.168.20.130" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 67 STRING "pxelinux.0" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 101 IPADDRESS vendor="Airespace" "192.168.23.253" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 241 IPADDRESS vendor="Cisco Aironet 1251" "192.168.23.252" 
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.19.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.19.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add reservedip 192.168.19.118 001b78116561 "agent1.SAMPLE.CORP" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add reservedip 192.168.19.53 001083b93d1b "agent2.SAMPLE.CORP" "" "DHCP"
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add reservedip 192.168.19.124 000e7fdeacab "agent3.sample.corp" "" "BOOTP"
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add reservedip 192.168.19.116 0000aacb1d58 "agent4.SAMPLE.CORP" "" "DHCP"
+Dhcp Server 192.168.20.54 Scope 192.168.19.0 Add reservedip 192.168.19.126 0030c18cb7e0 "agent5.sample.corp" "" "BOOTP"
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.19.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.20.0 255.255.255.0 "Servers Scope" ""
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.20.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 Add iprange 192.168.20.1 192.168.20.254 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.20.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.20.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 add excluderange 192.168.20.1 192.168.20.190
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 add excluderange 192.168.20.220 192.168.20.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.20.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.20.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 3 IPADDRESS "192.168.20.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 66 STRING "192.168.20.121" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 67 STRING "pxelinux.0" 
+Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.20.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.20.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.20.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.23.0 255.255.255.0 "Wireless" ""
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.23.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 Add iprange 192.168.23.1 192.168.23.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.23.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.23.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 add excluderange 192.168.23.1 192.168.23.39
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 add excluderange 192.168.23.220 192.168.23.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.23.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.23.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set optionvalue 51 DWORD "345600" 
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set optionvalue 3 IPADDRESS "192.168.23.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.23.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.23.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.23.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.24.0 255.255.255.0 "Guest Network" ""
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.24.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 Add iprange 192.168.24.1 192.168.24.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.24.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.24.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 add excluderange 192.168.24.220 192.168.24.254
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 add excluderange 192.168.24.1 192.168.24.39
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.24.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.24.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 set optionvalue 51 DWORD "14400" 
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 set optionvalue 3 IPADDRESS "192.168.24.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.24.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.24.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.24.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.24.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.25.0 255.255.255.0 "Voice" ""
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.25.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 Add iprange 192.168.25.1 192.168.25.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.25.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.25.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 add excluderange 192.168.25.1 192.168.25.39
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 add excluderange 192.168.25.220 192.168.25.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.25.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.25.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 3 IPADDRESS "192.168.25.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 15 STRING "sample.corp" 
+Dhcp Server 192.168.20.54 Scope 192.168.25.0 set optionvalue 150 IPADDRESS "192.168.21.10" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.25.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.25.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.25.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.27.0 255.255.255.0 "Maintenance" ""
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.27.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 Add iprange 192.168.27.1 192.168.27.254 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.27.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.27.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 add excluderange 192.168.27.200 192.168.27.254
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 add excluderange 192.168.27.1 192.168.27.100
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.27.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.27.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 51 DWORD "28800" 
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 3 IPADDRESS "192.168.27.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 51 DWORD user="Default BOOTP Class" "259200" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.27.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.27.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.27.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.248.0 255.255.255.0 "VPN" "VPN Description"
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.248.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 Add iprange 192.168.248.1 192.168.248.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.248.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.248.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 add excluderange 192.168.248.200 192.168.248.254
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 add excluderange 192.168.248.1 192.168.248.100
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.248.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.248.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 51 DWORD "14400" 
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 44 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 3 IPADDRESS "192.168.248.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 15 STRING "sample.corp" 
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set optionvalue 46 BYTE "8" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.248.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.248.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.248.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 192.168.249.0 255.255.255.0 "Main VPN" ""
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 192.168.249.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 Add iprange 192.168.249.1 192.168.249.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 192.168.249.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 192.168.249.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 add excluderange 192.168.249.65 192.168.249.65
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 add excluderange 192.168.249.220 192.168.249.254
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 add excluderange 192.168.249.1 192.168.249.39
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 192.168.249.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 192.168.249.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set optionvalue 51 DWORD "14400" 
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set optionvalue 3 IPADDRESS "192.168.249.251" 
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 192.168.249.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 192.168.249.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 192.168.249.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 192.168.249.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 10.20.0.0 255.255.255.0 "Another Server Scope" ""
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 10.20.0.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 Add iprange 10.20.0.1 10.20.0.254 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 10.20.0.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 10.20.0.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 add excluderange 10.20.0.1 10.20.0.100
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 add excluderange 10.20.0.200 10.20.0.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 10.20.0.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 10.20.0.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 3 IPADDRESS "10.20.0.251" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 44 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 46 BYTE "8" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 66 STRING "192.168.20.130" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 67 STRING "pxelinux.0" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 241 IPADDRESS vendor="Cisco Aironet 1251" "192.168.23.252" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 101 IPADDRESS vendor="Airespace" "192.168.23.253" 
+Dhcp Server 192.168.20.54 Scope 10.20.0.0 set optionvalue 51 DWORD user="Default BOOTP Class" "691200" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 10.20.0.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 10.20.0.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 10.20.0.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 10.20.8.0 255.255.255.0 "Terminal Velocity" ""
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 10.20.8.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 Add iprange 10.20.8.1 10.20.8.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 10.20.8.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 10.20.8.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 add excluderange 10.20.8.1 10.20.8.39
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 add excluderange 10.20.8.220 10.20.8.254
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 add excluderange 10.20.8.80 10.20.8.81
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 add excluderange 10.20.8.90 10.20.8.90
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 10.20.8.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 10.20.8.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 3 IPADDRESS "10.20.8.251" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" "192.168.99.59" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 44 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 46 BYTE "8" 
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 10.20.8.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 10.20.8.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.8.0 Add reservedip 10.20.8.20 005056930f9c "test1.SAMPLE.CORP" "" "BOTH"
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 10.20.8.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 10.20.208.0 255.255.255.0 "Test Net" ""
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 10.20.208.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add iprange 10.20.208.100 10.20.208.200 BOTH
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 10.20.208.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 10.20.208.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 10.20.208.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 10.20.208.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 51 DWORD "691200" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 3 IPADDRESS "10.20.208.251" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 15 STRING "SAMPLE.CORP" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 6 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 4 IPADDRESS "192.168.20.11" "192.168.20.19" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 66 STRING "192.168.20.130" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 67 STRING "pxelinux.0" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 10.20.208.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 10.20.208.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.114 0050b622ded7 "test2.sample.corp" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.117 005056ac15cd "test3" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.129 005056ac07c5 "test4" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.131 005056ac4ec0 "test5" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.145 005056ac27c7 "test6" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.151 005056ac00c8 "test7.sample.corp" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 Add reservedip 10.20.208.152 005056ac00c7 "test8.sample.corp" "" "BOTH"
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set reservedoptionvalue 10.20.208.154 66 STRING "foreman.sample.corp" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set reservedoptionvalue 10.20.208.154 67 STRING "pxelinux.0" 
+Dhcp Server 192.168.20.54 Scope 10.20.208.0 set reservedoptionvalue 10.20.208.154 12 STRING "puppet.sample.corp" 
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 10.20.208.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 add scope 10.20.253.0 255.255.255.0 "Cisco VPN" ""
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 set state 1
+
+   # ======================================================================
+   #  Start Add Ipranges to the Scope 10.20.253.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 Add iprange 10.20.253.1 10.20.253.254 
+
+   # ======================================================================
+   #  End   Add Ipranges to the Scope 10.20.253.0, Server 192.168.20.54                  
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add Excluderanges to the Scope : 10.20.253.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 add excluderange 10.20.253.1 10.20.253.39
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 add excluderange 10.20.253.220 10.20.253.254
+
+   # ======================================================================
+   #  End   Add Excluderanges to the Scope : 10.20.253.0, Server : 192.168.20.54         
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add OptionValues to the Scope : 10.20.253.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 set optionvalue 51 DWORD "3600" 
+Dhcp Server 192.168.20.54 Scope 10.20.253.0 set optionvalue 51 DWORD user="Default BOOTP Class" "2592000" 
+
+   # ======================================================================
+   #  End   Add OptionValues to the Scope : 10.20.253.0, Server : 192.168.20.54          
+   # ======================================================================
+
+
+   # ======================================================================
+   #  Start Add ReservedIp to the Scope : 10.20.253.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+   # ======================================================================
+   #  End   Add ReservedIp to the Scope : 10.20.253.0, Server : 192.168.20.54            
+   # ======================================================================
+
+
+
+# =====================================
+#     Add Scope End                    
+# =====================================
+
+
+# =====================================
+#     Add Super Scope                  
+# =====================================
+
+
+# =====================================
+#     Add Super Scope End              
+# =====================================
+
+# =====================================
+#     Add MScope                       
+# =====================================
+
+
+
+# =====================================
+#     Add MScope End                   
+# =====================================
+
+
+# ==============================================================
+#  Configuration Information for Server 192.168.20.54 Ends              
+# ==============================================================
+
+

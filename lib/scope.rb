@@ -1,5 +1,5 @@
 class Scope
-  attr_accessor :net, :mask, :title, :state, :desc, :option, :exclusions, :reserved, :leases, :startrange, :endrange
+  attr_accessor :name, :net, :mask, :state, :desc, :option, :exclusions, :reserved, :leases, :startrange, :endrange
 
   def initialize(matchobj)
     scopearray = matchobj.split(' ',3).to_a
@@ -20,7 +20,9 @@ class Scope
   def addexclusion(range=[])
     @exclusions << Exclusion.new(range)
   end
-  
+  def active?
+    return @state == 1
+  end
   def listleases
     @leases.keys
   end
@@ -32,12 +34,12 @@ class Scope
      p[0] = "Scope Network: #{@net}"
      p[1] = "Scope Netmask: #{@mask}"
      p[2] = "Scope Range: #{@startrange} - #{@endrange}"
-     p[3] = "Scope Title:  #{@title}"
+     p[3] = "Scope Name:  #{@name}"
      p[4] = "Scope option:  #{@option}" 
      p[5] = "Scope desc: #{@desc}"
      p[6] = "Scope active status: #{state}"
      p[7] = "Scope IP exclusions: \n#{@exlusions.to_s}"
-     p[8] = "Scope current reservations: \n#{@leases.to_s}"
+     p[8] = "Scope current reservations: \n#{getleases.to_s}"
      p[9] = "\n"
      return p
      

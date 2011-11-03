@@ -3,7 +3,7 @@ require 'lib/scope'
 require 'lib/exclusion'
 
 
-class Scopes < Hash
+class Msdhcpdump < Hash
   def initialize(dhcpdump)
     super()
     @debug=false
@@ -21,7 +21,16 @@ class Scopes < Hash
   def getscopes
      self.values
   end
-  
+ # def active
+ #   activelist = Array.new
+ #   self.each_value do
+ #     puts sc.name
+ #     if sc.active?
+ #        activelist << sc 
+ #     end
+ #   end
+ #   return activelist
+ # end
   private 
   def processdump(dhcpdump)
      linenumber=0
