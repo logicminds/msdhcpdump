@@ -22,15 +22,15 @@ class Msdhcpdump < Hash
   def getscopes
      self.values
   end
-  def getactive
-    activelist = []
-    self.each_value do
-      if sc.active?
-         activelist << sc 
-      end
-    end
-    return activelist
-  end
+#  def getactive
+#    activelist = []
+#    self.each_value do |sc|
+#      if sc.active?
+#         activelist += sc 
+#      end
+#    end
+#    return activelist
+#  end
   private 
   def processdump(dhcpdump)
      linenumber=0
