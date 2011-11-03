@@ -8,9 +8,9 @@ require 'msdhcpdump'
 
 
 dumpfile = File.open('sampledump.txt', 'r')
-@scopes = Scopes.new(dumpfile)
-puts @scopes.list
-@scopes.each_value do |s|
+@dhcpdump = Msdhcpdump.new(dumpfile)
+puts @dhcpdump.list
+@dhcpdump.each_value do |s|
         puts s.getleases
         puts "\n"
         puts s.exclusions
@@ -19,4 +19,3 @@ puts @scopes.list
 end
 
 dumpfile.close
-
