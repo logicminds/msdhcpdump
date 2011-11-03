@@ -7,4 +7,7 @@ class Lease
     @comment = lease[3]
     @option = lease[4]
   end
+  def to_s
+    return "#{@ip} - #{@mac} - #{@hostname} - #{@comment} - #{@option}\n"
+  end
 end
