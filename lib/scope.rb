@@ -12,17 +12,20 @@ class Scope
     @option = nil
     @exclusions = Array.new
     @reserved = Array.new
-    @leases = Array.new
+    @leases = Hash.new
   end
   def setstate value
     @state = value
   end
   def addexclusion(range=[])
     @exclusions << Exclusion.new(range)
-    
   end
+  
   def listleases
-    
+    @leases.keys
+  end
+  def getleases
+    @leases.values
   end
   def to_s
      p= Array.new
@@ -40,7 +43,8 @@ class Scope
      
   end
   def addlease(lease=[])
-    @leases << Lease.new(lease)
+    newlease = Lease.new(lease)
+    @leases[newlease.mac] = newlease
 
   end
 end

@@ -1,4 +1,4 @@
-class Lease
+class Lease 
   attr_accessor :ip, :mac, :hostname, :comment, :option
   def initialize(lease=[])
     @ip = lease[0]
