@@ -1,6 +1,6 @@
-require 'lib/lease'
-require 'lib/scope'
-require 'lib/exclusion'
+require 'msdhcpdump/lease'
+require 'msdhcpdump/scope'
+require 'msdhcpdump/exclusion'
 
 
 class Msdhcpdump < Hash
