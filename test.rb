@@ -30,7 +30,7 @@ puts @dhcpdump["192.168.19.0"].reservations
 # Show Active Scopes
 puts "\nAll Active Scopes"
 @dhcpdump.each_value do |sc|
-   puts "#{sc.net}" sc.active?
+   puts "#{sc.net}" if sc.active?
 end
 
 # Show All Scope properties
