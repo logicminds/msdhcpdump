@@ -190,7 +190,7 @@ Dhcp Server 192.168.20.54 Scope 192.168.18.0 set optionvalue 51 DWORD user="Defa
    # ======================================================================
 
 
-Dhcp Server 192.168.20.54 add scope 192.168.19.0 255.255.255.0 "ATL IT" ""
+Dhcp Server 192.168.20.54 add scope 192.168.19.0 255.255.255.0 "PDX IT" ""
 Dhcp Server 192.168.20.54 Scope 192.168.19.0 set state 1
 
    # ======================================================================
@@ -313,7 +313,7 @@ Dhcp Server 192.168.20.54 Scope 192.168.20.0 set optionvalue 51 DWORD user="Defa
 
 
 Dhcp Server 192.168.20.54 add scope 192.168.23.0 255.255.255.0 "Wireless" ""
-Dhcp Server 192.168.20.54 Scope 192.168.23.0 set state 1
+Dhcp Server 192.168.20.54 Scope 192.168.23.0 set state 0
 
    # ======================================================================
    #  Start Add Ipranges to the Scope 192.168.23.0, Server 192.168.20.54                  
@@ -533,7 +533,7 @@ Dhcp Server 192.168.20.54 Scope 192.168.27.0 set optionvalue 51 DWORD user="Defa
 
 
 Dhcp Server 192.168.20.54 add scope 192.168.248.0 255.255.255.0 "VPN" "VPN Description"
-Dhcp Server 192.168.20.54 Scope 192.168.248.0 set state 1
+Dhcp Server 192.168.20.54 Scope 192.168.248.0 set state 0
 
    # ======================================================================
    #  Start Add Ipranges to the Scope 192.168.248.0, Server 192.168.20.54                  

@@ -19,7 +19,6 @@ puts @dhcpdump.list
 # Show the properties of a specific scope
 puts "\nShow the properties of scope"
 puts @dhcpdump["192.168.19.0"].to_s
-puts "\n"
 # Show the exclusions
 puts "\nShow the Exclusions \n"
 puts @dhcpdump["192.168.19.0"].exclusions
@@ -29,8 +28,14 @@ puts "\nScope Reservations\n"
 puts @dhcpdump["192.168.19.0"].reservations
 
 # Show Active Scopes
+puts "\nAll Active Scopes"
 @dhcpdump.each_value do |sc|
    puts "#{sc.net} #{sc.active?} #{sc.state}"
 end
 
+# Show All Scope properties
+puts "\n"
+@dhcpdump.each_value do |sc|
+   puts sc.to_s
+end
 dumpfile.close

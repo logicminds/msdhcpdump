@@ -6,7 +6,7 @@ class Scope
    
     @net = scopearray[0]
     @mask = scopearray[1]
-    @title = scopearray[2].match(/([\w+\ ?]+)/i)[1]
+    @name = scopearray[2].match(/([\w+\ ?]+)/i)[1]
     # TODO Find out how to parse the description out
     @desc = nil
     @option = nil
